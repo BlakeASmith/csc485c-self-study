@@ -30,6 +30,17 @@ def quiz_for_function(module, f, sig):
     else:
         print_incorrect(diff(guess, module))
 
+    guessable = [p for p in sig.parameters]
+    print(guessable)
+    while guessable:
+        if (guess := click.prompt("Guess a Parameter ('quit' to give up): ")) in sig.parameters:
+            guessable = [p for p in guessable if p != guess]
+            print_correct(guess)
+        else:
+            if guess == "quit":
+                break
+            print_incorrect(guess)
+
 
 def quiz_for(module):
     functions = [getattr(module, attr) for attr in dir(module) if isfunction(getattr(module, attr))]

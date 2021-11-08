@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pyquiz"
+version = "0.1.0"
+description = ""
+authors = ["Blake Smith <blakeinvictoria@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+numpy = "^1.21.4"
+click = "^8.0.3"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+pyquiz = 'pyquiz.main:main'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
